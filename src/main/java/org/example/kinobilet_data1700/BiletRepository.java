@@ -18,17 +18,12 @@ public class BiletRepository {
     }
 
     public List<Bilet> hentAlle(){
-
         String sql = "SELECT * FROM Bilet ";
         List<Bilet> alleBiletter = db.query(sql, new BeanPropertyRowMapper(Bilet.class));
         return alleBiletter;
     }
 
-    public List<Film> hentFilmer(){
-        String sql = "SELECT * FROM Filmer;";
-        List<Film> filmList = db.query(sql, new BeanPropertyRowMapper(Film.class));
-        return filmList;
-    }
+
 
     public void slettAlle(){
         String sql = "DELETE FROM Bilet;";

@@ -1,12 +1,14 @@
 $(function(){
     hentFilmer();
+    console.log("ok")
 });
-
+let films = [];
 function hentFilmer() {
-    $.get( "/hentfilmer", function( filmer ) {
-        formaterFilmer(filmer);
-
-    });
+    console.log("ok")
+    $.get("/hentfilmer",function (data) {
+        films=data;
+        formaterFilmer(films);
+    })
 }
 
 function formaterFilmer(filmer){
@@ -94,12 +96,13 @@ function validateogSubmit() {
         telefonNr:telefonnr,
         email:email
     }
-    $.post("/lagreBilet", bilet,function (){})
-    let biletList={}
-    $.get("/hentBiletter", function (data){
-        biletList=data;
-
+    console.log(bilet)
+    $.post("/lagreBilet", bilet,function (){
         window.location.href="/biletTabel.html";
     })
+
+
+
+
 
 }
