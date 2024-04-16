@@ -13,12 +13,6 @@ import java.util.List;
 public class BiletController {
     @Autowired
      private BiletRepository biletRepository;
-    @Autowired
-    private FilmRepository filmRepository;
-    @GetMapping("/hentfilmer")
-    public List<Film> hentFilmer(){
-        return filmRepository.hentFilmer();
-    }
     @PostMapping("/lagreBilet")
     public void lagreBilet(Bilet bilet){biletRepository.lagreBilet(bilet);}
     @GetMapping("/hentBiletter")

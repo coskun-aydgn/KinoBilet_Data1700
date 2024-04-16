@@ -5,9 +5,8 @@ $(function(){
 let films = [];
 function hentFilmer() {
     console.log("ok")
-    $.get("/hentfilmer",function (data) {
-        films=data;
-        formaterFilmer(films);
+    $.get("/hentFilmer",function (data){
+        formaterFilmer(data);
     })
 }
 
